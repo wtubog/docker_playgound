@@ -14,3 +14,9 @@ after_success:
   - docker build -t wbtubog/multi-nginx ./nginx
   - docker build -t wbtubog/multi-server ./server
   - docker build -t wbtubog/multi-worker ./worker
+
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push wbtubog/multi-client
+  - docker push wbtubog/multi-nginx
+  - docker push wbtubog/multi-server
+  - docker push wbtubog/multi-worker
