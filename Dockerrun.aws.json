@@ -13,7 +13,15 @@
             "image": "wbtubog/multi-nginx",
             "essential": true,
             "hostname": "nginx",
-            "memory": 128
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": [
+                "client", "server"
+            ]
         },
         {
             "name": "server",
@@ -27,15 +35,6 @@
             "image": "wbtubog/multi-worker",
             "essential": false,
             "hostname": "worker",
-            "portMappings": [
-                {
-                    "hostPort": 80,
-                    "containerPort": 80
-                }
-            ],
-            "links": [
-                "client", "server"
-            ],
             "memory": 128
         }
     ]
