@@ -2,28 +2,28 @@
     "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
         {
-            "name": "Client",
+            "name": "client",
             "image": "wbtubog/multi-client:latest",
             "hostname": "client",
             "essential": false,
             "memory": 128
         },
         {
-            "name": "Nginx",
+            "name": "nginx",
             "image": "wbtubog/multi-nginx",
             "essential": true,
             "hostname": "nginx",
             "memory": 128
         },
         {
-            "name": "Server",
+            "name": "server",
             "image": "wbtubog/multi-server",
             "essential": false,
             "hostname": "api",
             "memory": 128
         },
         {
-            "name": "Worker",
+            "name": "worker",
             "image": "wbtubog/multi-worker",
             "essential": false,
             "hostname": "worker",
@@ -34,7 +34,7 @@
                 }
             ],
             "links": [
-                "Client", "Server"
+                "client", "server"
             ],
             "memory": 128
         }
