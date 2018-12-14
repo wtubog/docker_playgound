@@ -1,0 +1,42 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "Client",
+            "image": "wbtubog/multi-client:latest",
+            "hostname": "client",
+            "essential": false,
+            "memory": 128
+        },
+        {
+            "name": "Nginx",
+            "image": "wbtubog/multi-nginx",
+            "essential": true,
+            "hostname": "nginx",
+            "memory": 128
+        },
+        {
+            "name": "Server",
+            "image": "wbtubog/multi-server",
+            "essential": false,
+            "hostname": "api",
+            "memory": 128
+        },
+        {
+            "name": "Worker",
+            "image": "wbtubog/multi-worker",
+            "essential": false,
+            "hostname": "worker",
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": [
+                "Client", "Server"
+            ],
+            "memory": 128
+        }
+    ]
+}
