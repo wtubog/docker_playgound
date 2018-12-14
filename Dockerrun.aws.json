@@ -21,7 +21,8 @@
             ],
             "links": [
                 "client", "server"
-            ]
+            ],
+            "memory": 128
         },
         {
             "name": "server",
