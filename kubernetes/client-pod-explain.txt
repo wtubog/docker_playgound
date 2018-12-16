@@ -1,0 +1,33 @@
+Kubernetes Objects:
+- Stateful Set
+- ReplicaController
+- Pod
+- Service
+
+apiVersion - scopes of object
+Object types for v1 (API Groups)
+- componentStatus
+- Endpoints
+- Namespace
+- configMap
+- Event
+- Pod
+
+kind - the type of object we want to make
+
+Pod - Runs one or more closely related containers
+Services - Sets up networking in a Kubernetes cluster
+Deployment - Maintains a set of identical pods, ensuring that they have the correct config
+and that the right number exists
+
+kubectl apply -f client-pod.yaml
+kubectl apply -f client-node.yaml
+
+kubectl get pods
+kubectl get deployments
+
+kubectl describe pod client-pod
+
+Pod Edit
+
+Only `image` can be updated
