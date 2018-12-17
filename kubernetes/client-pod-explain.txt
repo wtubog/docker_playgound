@@ -31,3 +31,8 @@ kubectl describe pod client-pod
 Pod Edit
 
 Only `image` can be updated
+
+ClusterIP - exposes a set of pods to other objects in the Cluster
+NodePort - exposes a set of pods to the outside world
+
+Persistent volume claim (PVC)
